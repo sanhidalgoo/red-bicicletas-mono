@@ -1,0 +1,29 @@
+//-
+extends layout
+
+block content
+  script(src="https://accounts.google.com/gsi/client", async, defer)
+  div.container
+    div.row
+      div.col-md-4.offset-md-4
+        div.card
+          div.card-body
+            div.text-center.mb-3
+              h3 Login
+            div(id="g_id_onload",
+            data-client_id="ADD-CLIENT-ID",
+            data-callback="onSignIn")
+
+            div(class="g_id_signin",
+            data-type="standard",
+            data-ux_mode="popup"
+            data-shape="pill",
+            data-theme="filled_blue",
+            data-text="signin_with",
+            data-size="medium",
+            data-width="40",
+            data-logo_alignment="left")
+
+            a(href="/logout") Sign out
+
+            script(src="/javascripts/auth.js")
