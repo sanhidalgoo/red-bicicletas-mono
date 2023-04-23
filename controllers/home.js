@@ -22,7 +22,7 @@ exports.index = function (req, res) {
   verify()
     .then(() => {
       req.user = user;
-      res.render('index', { title: 'Express', user: user });
+      res.render('index', { title: 'Login - Red Bicicletas', user: user });
     }).catch(err => {
       res.redirect('/login')
     });
